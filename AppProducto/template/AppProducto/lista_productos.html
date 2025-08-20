@@ -1,0 +1,30 @@
+{% extends "AppProducto/padreadm.html" %}
+{% load static %}
+{% block contenido %}
+ 
+<main class="container">
+<table class="table table-striped">
+      <tr>
+          <td>Cod</td>
+          <td>Categoría</td>
+          <td>Nombre</td>
+          <td>Precio</td>
+          <td>Stock</td>
+          <td class="text-center">Acciones</td>
+      </tr>
+      {% for n in productos %}
+      <tr>
+          <td>{{n.cod}}</td>
+          <td>{{n.categoria}}</td>
+          <td>{{n.nombre}}</td>
+          <td>{{n.precio}}</td>
+          <td>{{n.stock}}</td>
+          <td class="text-center"><a href="{% url 'eliminar_producto' n.id %}" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+              <a href="{% url 'editar_producto' n.id %}" class="btn btn-outline-warning"><i class="bi bi-pencil-square"></i></a>
+          </td>
+          
+      </tr>
+      {% endfor %}
+</table>
+</main>
+{% endblock %}

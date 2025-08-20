@@ -1,0 +1,41 @@
+{% extends "AppProducto/padreadm.html" %}
+{% load static %}
+{% block contenido %}
+    <div class="container text-center py-5">
+    <h2 class="mb-4">Categorías</h2>
+    <div class="row justify-content-center">
+        <div class="col-6 col-md-3 mb-4">
+            <a href="" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden mx-auto" style="width: 200px; height: 200px; border: 3px solid #4f4d1fc5;">
+                    <img src="{% static 'AppCliente/assets/img/Cat_kitchen.jpg' %}" alt="Kitchen" class="img-fluid h-100 w-100 object-fit-cover">
+                </div>
+                <h5 class="mt-2 text-dark">Kitchen</h5>
+            </a>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <a href="" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden mx-auto" style="width: 200px; height: 200px; border: 3px solid #4f4d1fc5;">
+                    <img src="{% static 'AppCliente/assets/img/Cat_living.jpg' %}" alt="Living" class="img-fluid h-100 w-100 object-fit-cover">
+                </div>
+                <h5 class="mt-2 text-dark">Living</h5>
+            </a>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <a href="" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden mx-auto" style="width: 200px; height: 200px; border: 3px solid #4f4d1fc5;">
+                    <img src="{% static 'AppCliente/assets/img/Cat_bedroom.jpg' %}" alt="Bedroom" class="img-fluid h-100 w-100 object-fit-cover">
+                </div>
+                <h5 class="mt-2 text-dark">Bedroom</h5>
+            </a>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <a href="" class="text-decoration-none">
+                <div class="rounded-circle overflow-hidden mx-auto" style="width: 200px; height: 200px; border: 3px solid #4f4d1fc5;">
+                    <img src="{% static 'AppCliente/assets/img/Cat_Bathroom.jpg' %}" alt="Bathroom" class="img-fluid h-100 w-100 object-fit-cover">
+                </div>
+                <h5 class="mt-2 text-dark">Bathroom</h5>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

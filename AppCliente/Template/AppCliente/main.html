@@ -1,0 +1,38 @@
+{% extends "AppCliente\padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<main>
+    <!-- HTML -->
+    <div class="container">
+      <p>
+        <h4 class="fs-4 fw-semibold text-center">
+          <strong>Tienda Brupi,</strong> es una empresa especializada en diseño y decoración de interiores para hogares modernos. Nuestro equipo de 
+          diseñadores y decoradores trabaja con pasión para ofrecer soluciones personalizadas que combinan estilo, funcionalidad y confort.
+          Nos enfocamos en cada detalle, desde la selección de mobiliario y textiles hasta la iluminación y los accesorios decorativos.
+         </h4>
+      </p>
+      <p>
+
+      </p>
+    </div>   
+   
+    <div class="container">
+        <div class="text-center text-black">
+          <h2 class="container">Seleccione la opción que desee</h2>
+          <p></p>
+          
+          <a href="{% url 'login' %}" class="btn btn-outline-success rounded-pill" role="button"><h3>Usuario</h3></a>
+          <a href="{% url 'login_admin' %}" class="btn btn-outline-warning rounded-pill" role="button"><h3>Administrador</h3></a>
+                    
+          <p>
+          
+          </p>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

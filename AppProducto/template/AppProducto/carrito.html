@@ -1,0 +1,52 @@
+{% extends "AppCliente/padre.html" %}
+{% load static %}
+{% block contenido %}
+<h1 class="text-center">🛒 Mi Carrito</h1>
+
+<div class="container mt-4">
+    {% if productos %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acción</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>${{ producto.subtotal }}</td>
+                    <td>
+                        <a href="{% url 'eliminar_del_carrito' producto.id %}" class="btn btn-sm btn-danger">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+        <h4 class="text-end">Total: ${{ total }}</h4>
+    {% else %}
+        <p class="text-center">Tu carrito está vacío.</p>
+    {% endif %}
+</div>
+{% if productos %}
+<div class="text-end mb-3">
+    <a href="{% url 'vaciar_carrito' %}" class="btn btn-warning">
+        Vaciar carrito 🧹
+    </a>
+    <a class="btn btn-outline-dark mt-auto" href="{% url 'categoria' %}"></i>Volver</a>
+</div>
+{% endif %}
+
+
+{% endblock %}

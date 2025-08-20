@@ -1,0 +1,8 @@
+{% extends "AppCliente/padre.html" %}
+{% load static %}
+{% block contenido %}
+    <h3 class="text-center" style="color: #000000;">Bienvenido {{ user.username }}</h3>
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+{% endblock %}

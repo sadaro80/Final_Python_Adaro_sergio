@@ -1,0 +1,9 @@
+{% extends "AppProducto/padreadm.html" %}
+{% load static %}
+{% block contenido %}
+   <form action="alta_producto" method="POST" class="container">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Ingresar</button>
+   </form>
+{% endblock %}

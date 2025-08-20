@@ -1,0 +1,12 @@
+{% extends "AppCliente/padre.html" %}
+{% load static %}
+{% block contenido %}
+    <h1>LogIn</h1>
+    <form method="post" action="">
+        {% csrf_token %}       
+        {{ form.as_p}}
+        <button type="submit">Ingresar</button>
+    </form>
+   
+{% endblock %}
+

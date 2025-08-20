@@ -1,0 +1,14 @@
+{% extends "AppProducto/padreadm.html" %}
+{% load static %}
+{% block contenido %}
+<div class="container mt-4">
+  <h2>Editar Producto</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a href="{% url 'lista_productos' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+
+{% endblock %}

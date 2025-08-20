@@ -1,0 +1,11 @@
+{% extends "AppProducto/padreadm.html" %}
+{% load static %}
+{% block contenido %}
+    <h1> Buscar Producto</h1>
+    <form action="buscar" method="POST" class="container">
+        {% csrf_token %}
+        <p>Nombre</p>
+        <input type="text" name="nombre" required>
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock %}

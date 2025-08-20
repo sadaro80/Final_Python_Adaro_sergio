@@ -1,0 +1,36 @@
+{% extends "AppCliente/padre.html" %}
+{% load static %}
+
+{% block contenido %}
+<h1 class="text-center">Categoría: {{ categoria }}</h1>
+
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        {% for producto in productos %}
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Imagen basada en el código del producto -->
+                <img class="card-img-top" src="{% static 'AppCliente/assets/img/'|add:producto.cod|add:'.jpg' %}" alt="{{ producto.nombre }}" />
+
+                <!-- Detalles del producto -->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <h5 class="fw-bolder">{{ producto.nombre }}</h5>
+                        <p>${{ producto.precio }}</p>
+                    </div>
+                </div>
+
+                <!-- Botón de acción -->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'vista_productos' producto.id %}"> Ver más detalle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No hay productos en esta categoría.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
